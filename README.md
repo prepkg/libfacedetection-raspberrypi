@@ -26,9 +26,15 @@ Tested on Raspberry Pi 4 Model B (8 GB).
 
 ## Install
 
+* Download package:
+
 ```shell
 wget https://github.com/prepkg/libfacedetection-raspberrypi/releases/latest/download/libfacedetection.deb
+```
 
+* Install:
+
+```shell
 sudo apt install -y ./libfacedetection.deb
 ```
 
