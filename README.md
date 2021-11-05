@@ -26,12 +26,17 @@ Tested on Raspberry Pi 4 Model B (8 GB).
 
 ## Install
 
-* `wget https://github.com/prepkg/libfacedetection-raspberrypi/releases/latest/download/libfacedetection.deb`
-* `sudo apt install -y ./libfacedetection.deb`
+```shell
+wget https://github.com/prepkg/libfacedetection-raspberrypi/releases/latest/download/libfacedetection.deb
+
+sudo apt install -y ./libfacedetection.deb
+```
 
 ## Uninstall
 
-* `sudo apt purge --autoremove -y libfacedetection`
+```shell
+sudo apt purge --autoremove -y libfacedetection
+```
 
 ## Debian Package
 
