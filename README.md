@@ -22,7 +22,7 @@ Tested on Raspberry Pi 4 Model B (8 GB).
 
 ### Supported OS
 
-* Raspberry Pi OS Buster (32-bit)
+* Raspberry Pi OS Bullseye (32-bit)
 
 ## Install
 
@@ -45,7 +45,7 @@ sudo apt purge --autoremove -y libfacedetection
 Debian package contains the following shared libraries:
 
 | Library                     | Description                                              |
-| :-------------------------  | :------------------------------------------------------- |
+|:----------------------------|:---------------------------------------------------------|
 | libfacedetection.so         | CNN-based face detection                                 |
 
 ## Reference
