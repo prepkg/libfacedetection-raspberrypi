@@ -2,7 +2,7 @@
 
 ![libfacedetection-raspberrypi](https://i.ibb.co/QD8t7Cy/libfacedetection-raspberrypi.png)
 
-Precompiled **libfacedetection** binaries for **Raspberry Pi 3 & 4**.
+Precompiled **libfacedetection (2d02619 commit)** binaries for **Raspberry Pi 3 & 4**.
 Read the following [blog post](https://lindevs.com/install-precompiled-libfacedetection-on-raspberry-pi) for additional information.
 
 ## Supported features
