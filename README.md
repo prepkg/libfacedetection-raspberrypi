@@ -22,9 +22,11 @@ Tested on Raspberry Pi 4 Model B (8 GB).
 
 ### Supported OS
 
-* Raspberry Pi OS Bullseye (32-bit)
+* Raspberry Pi OS Bullseye (32-bit and 64-bit)
 
 ## Install
+
+* 32-bit:
 
 ```shell
 wget https://github.com/prepkg/libfacedetection-raspberrypi/releases/latest/download/libfacedetection.deb
@@ -32,6 +34,16 @@ wget https://github.com/prepkg/libfacedetection-raspberrypi/releases/latest/down
 
 ```shell
 sudo apt install -y ./libfacedetection.deb
+```
+
+* 64-bit:
+
+```shell
+wget https://github.com/prepkg/libfacedetection-raspberrypi/releases/latest/download/libfacedetection_64.deb
+```
+
+```shell
+sudo apt install -y ./libfacedetection_64.deb
 ```
 
 ## Uninstall
