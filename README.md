@@ -2,7 +2,7 @@
 
 ![libfacedetection-raspberrypi](https://i.ibb.co/QD8t7Cy/libfacedetection-raspberrypi.png)
 
-Precompiled **libfacedetection (4092665 commit)** binaries for **Raspberry Pi 3 & 4**.
+Precompiled **libfacedetection (fb0c773 commit)** binaries for **Raspberry Pi 3 & 4**.
 Read the following [blog post](https://lindevs.com/install-precompiled-libfacedetection-on-raspberry-pi) for additional information.
 
 ## Supported features
@@ -22,21 +22,9 @@ Tested on Raspberry Pi 4 Model B (8 GB).
 
 ### Supported OS
 
-* Raspberry Pi OS Bullseye (32-bit and 64-bit)
+* Raspberry Pi OS Bookworm 64-bit
 
 ## Install
-
-* 32-bit:
-
-```shell
-wget https://github.com/prepkg/libfacedetection-raspberrypi/releases/latest/download/libfacedetection.deb
-```
-
-```shell
-sudo apt install -y ./libfacedetection.deb
-```
-
-* 64-bit:
 
 ```shell
 wget https://github.com/prepkg/libfacedetection-raspberrypi/releases/latest/download/libfacedetection_64.deb
