@@ -13,7 +13,7 @@ jobs:
     steps:
       - name: Get the latest version
         run: |
-          VERSION=0.0.1-$(git ls-remote https://github.com/ShiqiYu/libfacedetection HEAD | cut -c1-7)-1
+          VERSION=0.0.1-$(git ls-remote https://github.com/ShiqiYu/libfacedetection HEAD | cut -c1-7)
           ARTIFACT=$(GH_TOKEN=${{ github.token }} gh release view $VERSION -R ${{ github.repository }} | grep -om1 linux || true)
           printf "VERSION=$VERSION\nARTIFACT=$ARTIFACT\n" >> $GITHUB_ENV
       - name: Clone the repository
