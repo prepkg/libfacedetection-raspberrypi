@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Precompiled libfacedetection binaries</title>
+    <meta name="description"
+          content="Always up-to-date libfacedetection binaries for Raspberry Pi - just download and use it.">
+    <link rel="icon"
+          href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8D%93%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;700;800&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="nav">
+    <div class="nav-inner">
+        <a class="brand" href="https://github.com/prepkg/libfacedetection-raspberrypi">
+            <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+                <g fill="none" stroke="#3b82f6" stroke-width="1.6" stroke-linecap="round">
+                    <path d="M3,7 V3 H7"/>
+                    <path d="M21,7 V3 H17"/>
+                    <path d="M3,17 V21 H7"/>
+                    <path d="M21,17 V21 H17"/>
+                    <circle cx="12" cy="12" r="5"/>
+                </g>
+                <g fill="#3b82f6">
+                    <circle cx="10" cy="11" r="0.9"/>
+                    <circle cx="14" cy="11" r="0.9"/>
+                </g>
+            </svg>
+            <span class="brand-name">prepkg/<strong>libfacedetection-raspberrypi</strong></span>
+        </a>
+        <nav class="nav-links">
+            <a href="https://github.com/prepkg/libfacedetection-raspberrypi/releases">Releases</a>
+            <a href="https://github.com/prepkg/libfacedetection-raspberrypi/stargazers">
+                <img class="star-count" src="https://img.shields.io/github/stars/prepkg/libfacedetection-raspberrypi"
+                     alt="GitHub Stars"></a>
+        </nav>
+    </div>
+</header>
+<main>
+    <section class="hero">
+        <svg class="hero-icon" viewBox="0 0 24 24" width="80" height="80" aria-hidden="true">
+            <g fill="none" stroke="#3b82f6" stroke-width="1.6" stroke-linecap="round">
+                <path d="M3,7 V3 H7"/>
+                <path d="M21,7 V3 H17"/>
+                <path d="M3,17 V21 H7"/>
+                <path d="M21,17 V21 H17"/>
+                <circle cx="12" cy="12" r="5"/>
+            </g>
+            <g fill="#3b82f6">
+                <circle cx="10" cy="11" r="0.9"/>
+                <circle cx="14" cy="11" r="0.9"/>
+            </g>
+        </svg>
+        <h1>libfacedetection</h1>
+        <p class="tagline">
+            🚀️ Always up-to-date <a href="https://github.com/ShiqiYu/libfacedetection">libfacedetection</a> binaries
+            for Raspberry Pi - just download and use it.
+        </p>
+        <div class="cta">
+            <a class="btn btn-primary" href="#install">Get Started</a>
+            <a class="btn btn-secondary" href="https://github.com/prepkg/libfacedetection-raspberrypi">View on
+                GitHub</a>
+        </div>
+        <div class="badges">
+            <a href="https://github.com/prepkg/libfacedetection-raspberrypi/releases/latest"><img
+                    src="https://img.shields.io/github/v/release/prepkg/libfacedetection-raspberrypi"
+                    alt="GitHub Release"></a>
+            <a href="https://github.com/prepkg/libfacedetection-raspberrypi/releases"><img
+                    src="https://img.shields.io/github/downloads/prepkg/libfacedetection-raspberrypi/total"
+                    alt="Downloads"></a>
+            <a href="https://github.com/prepkg/libfacedetection-raspberrypi/blob/master/LICENSE"><img
+                    src="https://img.shields.io/github/license/prepkg/libfacedetection-raspberrypi" alt="License"></a>
+            <a href="https://github.com/prepkg/libfacedetection-raspberrypi/actions/workflows/linux.yaml"><img
+                    src="https://github.com/prepkg/libfacedetection-raspberrypi/actions/workflows/linux.yaml/badge.svg"
+                    alt="Linux"></a>
+        </div>
+    </section>
+
+    <section id="install" class="install">
+        <h2>Install</h2>
+        <p class="hint">The command downloads and installs libfacedetection as a Debian package.</p>
+        <div class="code-block">
+            <code id="install-cmd">curl -sSLo libfacedetection.deb https://github.com/prepkg/libfacedetection-raspberrypi/releases/latest/download/libfacedetection-aarch64-linux-gnu.deb \
+  && sudo apt install -y ./libfacedetection.deb \
+  && rm -rf libfacedetection.deb</code>
+            <button class="copy-btn" data-target="install-cmd">Copy</button>
+        </div>
+    </section>
+
+    <section class="why">
+        <h2>Why?</h2>
+        <div class="cards">
+            <div class="card">
+                <h3>No official libfacedetection packages</h3>
+                <p>There are no prebuilt official libfacedetection packages for Raspberry Pi OS, forcing users to
+                    compile it from source themselves.</p>
+            </div>
+            <div class="card">
+                <h3>Optimized binaries</h3>
+                <p>libfacedetection is built with NEON optimizations enabled, giving a real performance boost on
+                    Raspberry Pi hardware compared to a build without them.</p>
+            </div>
+            <div class="card">
+                <h3>Always up to date</h3>
+                <p>GitHub CI workflows rebuild and publish libfacedetection automatically whenever a new version is
+                    released upstream.</p>
+            </div>
+            <div class="card">
+                <h3>No extra dependencies</h3>
+                <p>libfacedetection is built as a static library, so it links directly into your application with no
+                    shared library to install or manage at runtime.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="supported">
+        <h2>Supported Platforms</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Platform</th>
+                <th>Architectures</th>
+                <th>Notes</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Raspberry Pi OS 64-bit</td>
+                <td>aarch64</td>
+                <td>Statically linked library, compiled as position-independent code (PIC);<br>built with NEON
+                    optimizations enabled.
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+</main>
+<footer>
+    <p>Binaries are built with the <a href="https://github.com/prepkg/gcc-toolchain">GCC Toolchain</a>. Released
+        under the MIT License.</p>
+    <p>
+        <a href="https://github.com/prepkg/libfacedetection-raspberrypi">github.com/prepkg/libfacedetection-raspberrypi</a>
+    </p>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

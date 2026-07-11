@@ -1,53 +1,77 @@
 # libfacedetection-raspberrypi
 
-![libfacedetection-raspberrypi](https://i.ibb.co/QD8t7Cy/libfacedetection-raspberrypi.png)
+[![GitHub Release](https://img.shields.io/github/v/release/prepkg/libfacedetection-raspberrypi)](https://github.com/prepkg/libfacedetection-raspberrypi/releases/latest)
+[![License](https://img.shields.io/github/license/prepkg/libfacedetection-raspberrypi)](https://github.com/prepkg/libfacedetection-raspberrypi/blob/master/LICENSE)
+[![Downloads](https://img.shields.io/github/downloads/prepkg/libfacedetection-raspberrypi/total)](https://github.com/prepkg/libfacedetection-raspberrypi/releases)
+[![Linux](https://github.com/prepkg/libfacedetection-raspberrypi/actions/workflows/linux.yaml/badge.svg)](https://github.com/prepkg/libfacedetection-raspberrypi/actions/workflows/linux.yaml)
 
-Precompiled **libfacedetection (fb0c773 commit)** binaries for **Raspberry Pi 3 & 4**.
-Read the following [blog post](https://lindevs.com/install-precompiled-libfacedetection-on-raspberry-pi) for additional information.
+> 🚀️ Always up-to-date [libfacedetection](https://github.com/ShiqiYu/libfacedetection) binaries for Raspberry Pi - just download and use it.
 
-## Supported features
+> ⭐ If you find this repository useful, please consider giving it a star.
 
-* NEON optimization
-* OpenMP multi-threading
+The libfacedetection binaries are compiled with the [GCC Toolchain](https://github.com/prepkg/gcc-toolchain), ensuring
+compatibility across a wide range of Raspberry Pi boards running Raspberry Pi OS 64-bit. GitHub CI workflows are used to
+automate the build process: pipelines run daily, but new builds are triggered only when a new libfacedetection release
+is available.
 
-## Prerequisites
+## Why?
 
-### Supported Boards
+* **No official libfacedetection packages.** There are no prebuilt official libfacedetection packages for Raspberry Pi
+  OS, forcing users to compile it from source themselves.
+* **Optimized binaries.** libfacedetection is built with NEON optimizations enabled, giving a real performance boost on
+  Raspberry Pi hardware compared to a build without them.
+* **Always up to date.** GitHub CI workflows rebuild and publish libfacedetection automatically whenever a new version
+  is released upstream.
+* **No extra dependencies.** libfacedetection is built as a static library, so it links directly into your application
+  with no shared library to install or manage at runtime.
 
-* Raspberry Pi 3 Model A+
-* Raspberry Pi 3 Model B+
-* Raspberry Pi 4 Model B
+## Build Information
 
-Tested on Raspberry Pi 4 Model B (8 GB).
+* Statically linked library, compiled as position-independent code (PIC) so it can be embedded in both static and shared
+  applications.
+* Built with NEON optimizations enabled for better performance on Raspberry Pi.
 
-### Supported OS
+## Precompiled Binaries
 
-* Raspberry Pi OS Bookworm 64-bit
-
-## Install
+If you prefer not to build the libfacedetection yourself, a precompiled libfacedetection can be downloaded from the [releases page](https://github.com/prepkg/libfacedetection-raspberrypi/releases).
 
 ```shell
-wget https://github.com/prepkg/libfacedetection-raspberrypi/releases/latest/download/libfacedetection_64.deb
+curl -sSLo libfacedetection.deb https://github.com/prepkg/libfacedetection-raspberrypi/releases/latest/download/libfacedetection-aarch64-linux-gnu.deb \
+  && sudo apt install -y ./libfacedetection.deb \
+  && rm -rf libfacedetection.deb
 ```
+
+## Compilation
+
+### Requirements
+
+* Git
+* Docker
+
+### Instructions
+
+* Clone the repository:
 
 ```shell
-sudo apt install -y ./libfacedetection_64.deb
+git clone https://github.com/prepkg/libfacedetection-raspberrypi.git && cd libfacedetection-raspberrypi
 ```
 
-## Uninstall
+* Build the Docker image:
 
 ```shell
-sudo apt purge --autoremove -y libfacedetection
+./setup.sh build-image
 ```
 
-## Debian Package
+* Build the library:
 
-Debian package contains the following shared libraries:
+```shell
+./setup.sh build-lib
+```
 
-| Library                     | Description                                              |
-|:----------------------------|:---------------------------------------------------------|
-| libfacedetection.so         | CNN-based face detection                                 |
+After compilation, the `deb` package will be available in the `build` directory.
 
-## Reference
+* (Optional) Run the test to verify that the library links correctly and the resulting binary runs under QEMU:
 
-1. [libfacedetection repository](https://github.com/ShiqiYu/libfacedetection)
+```shell
+./setup.sh test-lib
+```
